@@ -3,7 +3,18 @@
 
 	</head>
 	<body>
-		<audio id="audioPlayer" src="mickael-miro-lhorloge-tourne.mp3"></audio>
+		<audio id="audioPlayer">
 
+		  <source src="hype_home.ogg"></source>
+
+		  <source src="hype_home.mp3"></source>
+
+		</audio>
+
+
+
+		<button class="control" onclick="play('audioPlayer', this)">Play</button>
+
+		<button class="control" onclick="resume('audioPlayer')">Stop</button>
 	</body>
 </html>
