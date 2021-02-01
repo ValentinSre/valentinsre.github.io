@@ -17,7 +17,7 @@ body {
 
 /* || typography */
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Verdana', cursive;
   color: #2a2a2a;
 }
@@ -41,6 +41,10 @@ h2 {
 
 h3 {
   font-size: 2.2rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 p, li {
