@@ -27,7 +27,7 @@
 			player.pause();
 		}
 			
-		function update(player) {
+	/*	function update(player) {
    			var duration = player.duration;    // Durée totale
 			var time = player.currentTime; // Temps écoulé
 			var fraction = time / duration;
@@ -35,7 +35,7 @@
  			var progress = document.querySelector('#indicator');
 			progress.style.width = percent + '%';
 			progress.textContent = percent + '%';
-		}
+		} */
 			
 	</script> 
   </head>
@@ -87,9 +87,11 @@
 		  <source src="mickael-miro-lhorloge-tourne.mp3"></source>
 
 		</audio>
-	
-		<div id="progressbar">
-   			 <div id="indicator"></div>
+	     
+		<div>
+			<div id="progressBarControl">
+    				<div id="progressBar">Pas de lecture</div>
+  			</div>
 		</div>
 
 		<button class="control" onclick="play('audioPlayer', this)">Play</button>
