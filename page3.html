@@ -1,6 +1,24 @@
 <html>
 	<head>
+		<script> 
+		
+		function play(idPlayer, control) {
+			var player = document.querySelector('#' + idPlayer);
+			if (player.paused) {
+				player.play();
+				control.textContent = 'Pause';
+			} else {
+				player.pause();
+				control.textContent = 'Play';
+			}
+		}
 
+		function pause(idPlayer) {
+ 			var player = document.querySelector('#' + idPlayer);
+			player.currentTime = 0;
+			player.pause();
+		}
+		</script> 
 	</head>
 	<body>
 		<audio id="audioPlayer">
@@ -11,6 +29,6 @@
 
 		<button class="control" onclick="play('audioPlayer', this)">Play</button>
 
-		<button class="control" onclick="resume('audioPlayer')">Stop</button>
+		<button class="control" onclick="pause('audioPlayer')">Stop</button>
 	</body>
 </html>
