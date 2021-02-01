@@ -24,7 +24,7 @@
 			var time = player.currentTime; // Temps écoulé
 			var fraction = time / duration;
 			var percent  = Math.ceil(fraction * 100);
- 			var progress = document.querySelector('#progressBar');
+ 			var progress = document.querySelector('#progressBarControl');
 			progress.style.width = percent + '%';
 			progress.textContent = percent + '%';
 		}
