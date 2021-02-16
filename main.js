@@ -1,25 +1,18 @@
-const first = document.querySelector('#number1');
-const second = document.querySelector('#number2');
-
-const result = document.querySelector('.result');
+const first = document.querySelector('#x');
+const second = document.querySelector('#y');
 
 if (window.Worker) {
-	const myWorker = new Worker("worker.js");
-
-	first.onchange = function() {
-	  myWorker.postMessage([first.value, second.value]);
-	  console.log('Message posted to worker');
-	}
-
-	second.onchange = function() {
-	  myWorker.postMessage([first.value, second.value]);
-	  console.log('Message posted to worker');
-	}
-
-	myWorker.onmessage = function(e) {
-		result.textContent = e.data;
-		console.log('Message received from worker');
-}
+	first = getRndInteger(0,150);
+	console.log('x est changée')
+	second = getRndInteger(0,150);
+	postMessage(workerResult);
 } else {
 	console.log('Your browser doesn\'t support web workers.')
 }
+
+
+<script>
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+</script> 
