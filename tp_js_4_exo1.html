@@ -12,22 +12,43 @@
 </head> 
 
 <body> 
-  <p>
-  Here is a sample code for using a <a href="https://developer.mozilla.org/fr/docs/Web/API/Web_Workers_API/Utilisation_des_web_workers" >Web Worker</a>. In short, Web Workers are a simple means for web content to run scripts in background threads. 
-</p>
 
-	 <form>
-        <div>
-          <label for="number1">Multiply number 1: </label>    
-          <input type="text" id="number1" value="0">
-        </div>
-        <div>
-          <label for="number2">Multiply number 2: </label>   
-          <input type="text" id="number2" value="0">
-        </div>
-      </form>
+<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
 
-      <p class="result">Result: 0</p>
+
+<script>
+
+    function drawCircle(x, y) {
+        const c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(10*x, 10*y, 5, 0, 2 * Math.PI );
+        ctx.stroke();
+    }
+
+    x=0;
+    y=0;
+    x2=x;
+    y2=y;
+    let j = 0;
+    const duree = 100
+    let interval = setInterval ( function() {
+	    
+            if (x=!x2 and y!=y2){    
+            	drawCircle(x, y);  
+		x2=x;
+		y2=y;
+	    }
+		
+       
+        if ( ++j === duree ) {
+            clearInterval(interval);
+        }
+    }, 500 );
+
+
+
+	</script>
 
   <script src="main.js"></script>
 
